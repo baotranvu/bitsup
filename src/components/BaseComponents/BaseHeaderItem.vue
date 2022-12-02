@@ -1,6 +1,6 @@
 <template>
   <li>
-    <a :href="url">{{ title }}</a>
+    <a href="/">Home</a>
   </li>
 </template>
 <script lang="ts">
@@ -8,12 +8,8 @@ import { Options, Vue } from "vue-class-component";
 
 @Options({
   props: {
-    title: String,
-    url: String,
+    Item: Object,
   },
 })
-export default class BaseHeaderItem extends Vue {
-  title!: string;
-  url!: string;
-}
+export default class BaseHeaderItem extends Vue {}
 </script>

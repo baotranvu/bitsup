@@ -1,8 +1,13 @@
 <template>
-  <div class="box">
-    <ul class="tabs">
-      <base-header-item></base-header-item>
-    </ul>
+  <div>
+    <div class="tabs is-centered is-boxed is-medium">
+      <ul>
+        <base-header-item></base-header-item>
+        <base-header-item></base-header-item>
+        <base-header-item></base-header-item>
+        <base-header-item></base-header-item>
+      </ul>
+    </div>
   </div>
 </template>
 <script lang="ts">
@@ -14,6 +19,14 @@ import BaseHeaderItem from "./BaseHeaderItem.vue";
   },
   components: {
     BaseHeaderItem,
+  },
+  data() {
+    return {
+      Item: {
+        title: "Home",
+        url: "/",
+      },
+    };
   },
 })
 export default class BaseHeader extends Vue {}
