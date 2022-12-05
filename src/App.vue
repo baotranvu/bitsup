@@ -1,11 +1,25 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
+  <base-header class="base-header" :listItem="listItem"></base-header>
+
   <router-view />
 </template>
-
+<script lang="ts">
+import { Options, Vue } from "vue-class-component";
+import BaseHeader from "./components/BaseComponents/Header/BaseHeader.vue";
+@Options({
+  components: {
+    BaseHeader,
+  },
+})
+export default class App extends Vue {
+  listItem: unknown = [
+    { name: "home", title: "Homepage" },
+    { name: "about", title: "About Us" },
+    { name: "service", title: "Services" },
+    { name: "contact", title: "Contact" },
+  ];
+}
+</script>
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -14,17 +28,7 @@
   text-align: center;
   color: #2c3e50;
 }
-
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+.base-header {
+  background: #383e4c;
 }
 </style>
